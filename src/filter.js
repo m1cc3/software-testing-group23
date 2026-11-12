@@ -25,7 +25,9 @@ function filter(array, predicate) {
   let index = -1
   let resIndex = 0
   const length = array == null ? 0 : array.length
-  const result = [[]]
+  // Fix: Initialize the result as an empty array to avoid
+  // returning a nested empty array when no elements match.
+  const result = []
 
   while (++index < length) {
     const value = array[index]
